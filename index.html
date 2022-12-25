@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      const getComputerChoice = () => {
+        let randomNumber = Math.floor(Math.random() * 3);
+        switch (randomNumber) {
+          case 0:
+            return "sasso";
+            break;
+          case 1:
+            return "carta";
+            break;
+          case 2:
+            return "forbici";
+            break;
+        }
+      };
+
+      const Gameplay = (ComputerChoice, PlayerChoice) => {
+        if (ComputerChoice === PlayerChoice) {
+          return("Pareggio");
+        } else if (PlayerChoice == "carta") {
+          if (ComputerChoice == "sasso") {
+            return("Player vince");
+          } else {
+            return("Computer vince");
+          }
+        } else if (PlayerChoice == "sasso") {
+          if (ComputerChoice == "forbici") {
+            return("Player vince");
+          } else {
+            return("Computer vince");
+          }
+        } else if (PlayerChoice == "forbici") {
+          if (ComputerChoice == "carta") {
+            return("Player vince");
+          } else {
+            return("Computer vince");
+          }
+        }
+      };
+
+      const loop= ()=> {
+        let i;
+        for (i=5; i>0; i--){
+            Gameplay();
+            let ComputerChoice = getComputerChoice();
+      let PlayerChoice = prompt("Sai gia dai");
+      console.log(ComputerChoice);
+      console.log(Gameplay(ComputerChoice, PlayerChoice));
+        }
+      }
+
+
+
+
+      loop();
+
+
+
+
+    </script>
+  </body>
+</html>
